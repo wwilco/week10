@@ -1,0 +1,17 @@
+if @article.save
+  redirect_to article_path(@article)
+else
+  render new
+end
+
+only use on create and update methods since thats the only places where thigns are saved.
+
+render vs redirect
+- render wont trigger controller action
+- redirect actually calls action and creates news thing while deleting the old.
+- render updates the old thing and adds the new thing as well.
+- unless you call to delete the old thing, with render, the old thing will remain
+
+
+.create method wil add to db, but .new will save it
+cannot do this with .create because you need to add data to the thing before you save it

@@ -1,0 +1,14 @@
+<%= form_for @book, url: {action: 'create'} do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <br><br>
+  <%= f.label :author %>
+  <%= f.text_field :author %>
+  <br><br>
+  <%= f.label :status %>
+  <%= f.text_field :status %>
+
+  <%= f.submit %>
+
+  <%= link_to 'cancel', books_path %>
+  <% end %>

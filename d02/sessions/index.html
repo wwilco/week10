@@ -1,7 +1,18 @@
 <html>
-  <body>
-    <form id="form_id" action="login" method="GET">
-      <input type="text" name="password">
-    </form>
+<body>
+  <h1>Create a User</h1><br />
+  <form action = "/user" method = "POST">
+    Username: <input type = "text" name = "username"><br />
+    Password: <input type = "password" name = "password"><br />
+    Password Confirmation: <input type = "password" name = "confirm_password"><br />
+    <button>Sign Up</button>
+  </form>
+  <br /><br />
+  <h1>Sign In</h1>
+  <form action = "/session" method = "POST">
+    Username: <input type = "text" name = "username"><br />
+    Password: <input type = "password" name = "password"><br />
+    <button>Sign In</button>
   </body>
-</html>
+  </html>
+  

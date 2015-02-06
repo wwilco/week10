@@ -1,0 +1,32 @@
+rake db:seed, allows people to seed the
+
+rake -T shows you everything you can do with rake
+rake CRUD routes makes all routes as long as you've input table data
+
+
+---posts.db
+must name controller after your route
+
+    Routes  Posts_Controller
+       |          |   index.html.erb
+       |          |    new.html.erb
+       |          |        |
+       |          |        |
+--->/posts/--->#index---> view   <---MVC
+
+in models, inside concerns, we have a post.rb file
+in controllers, inside concerns, we have post_controller.rb
+  - this has the active record and the PostController class
+  - have to define posts in the post_controllers.rb
+  - inside the PostsController class we have a method, inside reads: @posts = Post.all
+  - has to be an instance variable so that it can be passed into the index.html.erb
+in views,  we have index.html.erb,
+ - use embedded ruby. must use the @posts instance variable from post_controller.erb
+
+show, new, index and edit are the html.erb files we will need
+  - new, create, show, destroy and edit
+  - new/html.erb used for new and create methods
+  - show.html.erb used for show method
+
+stylesheets go in assets. name the css file by the name of the app.
+  - easier for linking

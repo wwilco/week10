@@ -1,0 +1,13 @@
+<%= @article.headline %>
+<br>
+<%= @article.byline %>
+<br>
+<%= @article.content %>
+<br>
+<%= image_tag @article.photo_url %>
+<br>
+<%= link_to "Go Home!", articles_path %>
+<br>
+<%= link_to "Destroy!", article_path(@article), method: :delete %>
+<br>
+<%= link_to "Edit!", edit_article_path(@article)%>

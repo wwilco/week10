@@ -1,0 +1,16 @@
+<%= form_for @book, url: {action: 'update'} do |f| %>
+<%= f.label :title %>
+<%= f.text_field :title, value: @book.title %>
+<br /><br />
+
+<%= f.label :author %>
+<%= f.text_field :author, value: @book.author %>
+<br /><br />
+
+<%= f.label :status %>
+<%= f.text_field :status, value: @book.status %>
+<br /><br />
+
+<%= f.submit %>
+<% end %>
+<%= link_to 'cancel', @book %>

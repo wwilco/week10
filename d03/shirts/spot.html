@@ -1,0 +1,56 @@
+<html>
+<head>
+  <title>spotiFIND</title>
+</head>
+<body>
+  <input type= "text" id= "searcher" placeholder= "sex, droogs, rock'n'roll">
+  <button id="button">XXX</button>
+  <h1 id="h1name"></h1>
+  <a id="linkbutton" href="#">
+    <div >
+      <img  />
+    </div>
+  </a>
+
+  <script>
+  var button = document.getElementById("button");
+  var body = document.querySelector("body");
+  button.addEventListener('click', function(){
+    var search = document.getElementById("searcher");
+    var searchVal = search.value;
+    var url_safe = encodeURI(searchVal);
+    var url = "https://api.spotify.com/v1/search?q=artist:" + url_safe + "&type=artist";
+    console.log(url);
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", url);
+    xhr.addEventListener('load' , function() {
+      var data = xhr.responseText;
+      var parsed = JSON.parse(data);
+      var artist = document.querySelector("img");
+      artist.setAttribute("src", parsed["artists"]["items"][0]["images"][1]["url"]);
+      var h1 = document.querySelector("h1");
+      h1.innerHTML = parsed["artists"]["items"][0]["name"];
+      body.appendChild(h1);
+      var artistid = parsed["artists"]["items"][0]["id"];
+      var button2 = document.getElementById("linkbutton");
+      button2.addEventListener('click', function(){
+        var url2 = "https://api.spotify.com/v1/artists/" + artistid + "/albums";
+        console.log(url2);
+        var i = 0;
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", url2);
+        xhr.addEventListener('load' , function() {
+          var data = xhr.responseText;
+          var parsed = JSON.parse(data);
+          var album = document.querySelector("img");
+          i++;
+          album.setAttribute("src", parsed["items"][0]["images"][i]["url"]);
+        });
+        xhr.send();
+      });
+    });
+    xhr.send();
+  });
+</script>
+</body>
+</html>

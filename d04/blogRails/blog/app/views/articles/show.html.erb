@@ -1,0 +1,10 @@
+<h2><%= @article.title %></h2>
+<h3>by <%= @article.author %></h3>
+<%= @article.content %>
+<br />
+<%= link_to 'back', articles_path %>
+<br /><br />
+<%= link_to 'edit', edit_article_path(@article) %>
+<br /><br />
+
+<%= link_to 'delete', @article, method: :delete %>

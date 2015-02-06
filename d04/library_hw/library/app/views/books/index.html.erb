@@ -1,0 +1,10 @@
+<h1>Welcome to my Library</h1>
+<% @books.each do |book| %>
+  <%= link_to book.title, book %>
+  <%= book.author %>
+  <%= book.status %>
+  <br /><br />
+  
+<% end %>
+<br /><br />
+<%= link_to 'Add a book!', new_book_path %>

@@ -1,7 +1,7 @@
 Rails.application
   get '/login' => 'sessions#new'
   post '/session' => "session#create"
-  delete '/session' => 'destroy#'
+  delete '/session' => 'session#destroy'
 
   get '/secret' => 'secret#new'
 
